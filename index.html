@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artistry Wear</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+         header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header img {
+            max-width: 50px; /* Adjust the size of the logo */
+            margin-right: 10px; /* Adjust the spacing between the logo and text */
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .product {
+            position: relative;
+            width: 300px;
+            margin: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .product h3 {
+            text-align: center;
+            margin: 15px 0;
+            color: #2c3e50;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 80%;
+            max-height: 60%;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .modal img:hover {
+            transform: scale(1.1);
+        }
+
+        .timer {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            color: white;
+            display: none;
+        }
+
+        .buy-button {
+            position: absolute;
+            bottom: 15px;
+            left: calc(50% - 70px); /* Adjusted position */
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .back-button {
+            position: absolute;
+            bottom: 15px;
+            left: calc(50% + 10px); /* Adjusted position */
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+     <header>
+        <img src="logo.png" alt="Artistry Wear Logo"> <!-- Replace "logo.png" with the path to your logo image -->
+        <h1>Artistry Wear</h1>
+    </header>
+
+
+    <section>
+        <div class="product" onclick="openModal('t1.jpg')">
+            <img src="t1.jpg" alt="T-Shirt 1">
+            <h3>Artistry Wear 1</h3>
+        </div>
+
+        <div class="product" onclick="openModal('t2.jpg')">
+            <img src="t2.jpg" alt="T-Shirt 2">
+            <h3>Artistry Wear 2</h3>
+        </div>
+
+        <div class="product" onclick="openModal('t3.jpg')">
+            <img src="t3.jpg" alt="T-Shirt 1">
+            <h3>Artistry Wear 3</h3>
+        </div>
+
+        <div class="product" onclick="openModal('t4.jpg')">
+            <img src="t4.jpg" alt="T-Shirt 1">
+            <h3>Artistry Wear 4</h3>
+        </div>
+
+
+        <div class="product" onclick="openModal('t5.jpg')">
+            <img src="t5.jpg" alt="T-Shirt 1">
+            <h3>Artistry Wear 5</h3>
+        </div>
+
+
+        <div class="product" onclick="openModal('t6.jpg')">
+            <img src="t6.jpg" alt="T-Shirt 1">
+            <h3>Artistry Wear 6</h3>
+        </div>
+
+
+        <div class="product" onclick="openModal('t7.jpg')">
+            <img src="t7.jpg" alt="T-Shirt 1">
+            <h3>Artistry Wear 7</h3>
+        </div>
+
+        <div class="product" onclick="openModal('t8.jpg')">
+            <img src="t8.jpg" alt="T-Shirt 1">
+            <h3>Artistry Wear 8</h3>
+        </div>
+
+
+        <div class="product" onclick="openModal('t9.jpg')">
+            <img src="t9.jpg" alt="T-Shirt 1">
+            <h3>Artistry Wear 9</h3>
+        </div>
+
+        <div class="product" onclick="openModal('t10.jpg')">
+            <img src="t10.jpg" alt="T-Shirt 1">
+            <h3>Artistry Wear 10</h3>
+        </div>
+
+        <div class="product" onclick="openModal('t11.jpg')">
+            <img src="t11.jpg" alt="T-Shirt 1">
+            <h3>Artistry Wear 11</h3>
+        </div>
+
+        <div class="product" onclick="openModal('t12.jpg')">
+            <img src="t12.jpg" alt="T-Shirt 1">
+            <h3>Artistry Wear 12</h3>
+        </div>
+
+        <div class="product" onclick="openModal('t13.jpg')">
+            <img src="t13.jpg" alt="T-Shirt 1">
+            <h3>Artistry Wear 13</h3>
+        </div>
+
+        <div class="product" onclick="openModal('t14.jpg')">
+            <img src="t14.jpg" alt="T-Shirt 1">
+            <h3>Artistry Wear 14</h3>
+        </div>
+        <div class="product" onclick="openModal('t15.jpg')">
+            <img src="t15.jpg" alt="T-Shirt 1">
+            <h3>Artistry Wear 15</h3>
+        </div>
+        <div class="product" onclick="openModal('t16.jpg')">
+            <img src="t16.jpg" alt="T-Shirt 1">
+            <h3>Artistry Wear 16</h3>
+        </div>
+        
+
+
+        <!-- Add more product entries as needed -->
+
+    </section>
+
+     <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImg" src="" alt="Full Image">
+        <div id="timer" class="timer"></div>
+        <button class="buy-button" onclick="buyProduct()">Buy Now</button>
+        <button class="back-button" onclick="closeModal()">Back</button>
+    </div>
+
+    <footer>
+        &copy; 2024 Artistry Wear. All rights reserved.
+    </footer>
+
+       <script>
+        var timerDuration = 10; // Timer duration in seconds
+        var countdown;
+
+        function openModal(productName) {
+            document.getElementById('myModal').style.display = 'flex';
+            document.getElementById('modalImg').src = productName + '.jpg'; // Assuming the product image name corresponds to the product name
+
+            // Show timer
+            var timerElement = document.getElementById('timer');
+            timerElement.innerText = timerDuration;
+            timerElement.style.display = 'block';
+
+            // Show Buy button
+            document.querySelector('.buy-button').style.display = 'block';
+
+            // Show Back button
+            document.querySelector('.back-button').style.display = 'block';
+
+            // Start countdown
+            countdown = setInterval(function() {
+                timerDuration--;
+                timerElement.innerText = timerDuration;
+
+                if (timerDuration <= 0) {
+                    // Auto close the modal after the timer reaches 0
+                    closeModal();
+                }
+            }, 1000);
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+
+            // Reset timer
+            clearInterval(countdown);
+            timerDuration = 10;
+            document.getElementById('timer').style.display = 'none';
+            document.querySelector('.buy-button').style.display = 'none';
+            document.querySelector('.back-button').style.display = 'none';
+        }
+
+        function buyProduct() {
+            // You can customize the WhatsApp message and number here
+            var whatsappMessage = "Hi! I'd like to purchase the " + getProductNameFromImage() + ". It's exactly what I've been looking for!";
+            var whatsappNumber = "+918956741978";
+            
+            // Open WhatsApp with the predefined message
+            window.location.href = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(whatsappMessage);
+        }
+
+        function getProductNameFromImage() {
+            // Extract product name from the image source
+            var imageSrc = document.getElementById('modalImg').src;
+            var imageName = imageSrc.split('/').pop(); // Get the last part of the URL (assuming the image is in the same folder)
+
+            // Remove the file extension (assuming images are in the format "productName.jpg")
+            var productName = imageName.replace(/\.[^/.]+$/, "");
+
+            return productName;
+        }
+    </script>
+</body>
+</html>
